@@ -1,0 +1,9 @@
+
+home_dir: root
+#home_dir: home
+aws_cli_user: root
+aws_output_format: json
+aws_region: us-west-2
+aws_access_key_id: AKIAIKWP73NDIZQ2BITA
+aws_secret_access_key: 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
+

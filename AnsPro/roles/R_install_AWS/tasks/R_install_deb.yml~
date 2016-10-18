@@ -1,0 +1,35 @@
+
+
+- name: update all packages
+  apt: update_cache=yes
+
+- name: Add repositories
+  apt_repository: repo='ppa:marutter/rrutter' state=present
+
+- name: Add repositories
+  apt_repository: repo='ppa:marutter/c2d4u' state=present
+
+- name:  updating all packages
+  apt: update_cache=yes
+
+#- name: upgrading packages 
+#  apt: upgrade=dist 
+
+#- name: Making sure R is installed
+#  apt: pkg=r-base state=installed
+
+#- name: adding a few R packages
+#  shell: echo "install.packages({{item}},repos='https://cran.cnr.berkeley.edu/',dependencies=T)"
+#  with_items:
+#    - rjson
+#    - stringr
+#   - httr
+
+- name: Install pip
+  easy_install: name=pip
+
+- name: Install boto by pip
+  pip: name=boto state=latest
+  
+- name: Install AWS-Cli
+  pip: name=awscli state=latest

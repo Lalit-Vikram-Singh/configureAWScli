@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local 
+  become: yes
+# sudo: yes
+  gather_facts: yes
+ 
+  vars_files:
+    - vars/default.yml
+
+  roles:
+   - { role: R_install_AWS, tags: ["R_install_AWS"] }

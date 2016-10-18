@@ -1,0 +1,27 @@
+
+
+- name: Create the AWS directory
+  file: path=/{{home_dir}}/.aws/  owner={{aws_cli_user}} group={{aws_cli_user}} state=directory mode=0644
+  become_user: root
+  register: conf_success
+
+- name: Create directory for AWS config file
+  file: path=/{{home_dir}}/.aws/config  owner={{aws_cli_user}} group={{aws_cli_user}} state=absent mode=0644
+  when: conf_success | success
+
+- name: Create directory for AWS credentials file
+  file: path=/{{home_dir}}/.aws/credentials  owner={{aws_cli_user}} group={{aws_cli_user}} state=absent mode=0644
+  when: conf_success | success
+ 
+- name: Copy AWS CLI config
+  template: src=aws_cli_config.j2 dest=/{{home_dir }}/.aws/config  owner={{aws_cli_user}} group={{aws_cli_user}} mode=0600
+  when: conf_success | success
+
+- name: Copy AWS CLI credentials
+  template: src=aws_cli_credentials.j2 dest=/{{home_dir }}/.aws/credentials  owner={{aws_cli_user}} group={{aws_cli_user}} mode=0600
+  when: conf_success | success
+
+
+
+
+
