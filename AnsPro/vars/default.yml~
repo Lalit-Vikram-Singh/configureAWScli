@@ -4,6 +4,6 @@ home_dir: root
 aws_cli_user: root
 aws_output_format: json
 aws_region: us-west-2
-aws_access_key_id: AKIAIKWP73NDIZQ2BITA
-aws_secret_access_key: XM+Cy+S76MKrO7zUerTfyAdo1uXPCy8F79sxQqbK
+aws_access_key_id: your key id
+aws_secret_access_key: your acess key
 
