@@ -1,2 +1,2 @@
 # configureAWScli
-Configure AWS cli through Ansible play book. 
+Install/Auto-Configure AWS cli through Ansible play book. 
